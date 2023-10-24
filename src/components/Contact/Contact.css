@@ -1,0 +1,15 @@
+body {
+  font-family: sans-serif;
+}
+
+/* .contact-form {
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
+} */
+
+.contact-form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
