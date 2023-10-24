@@ -1,0 +1,17 @@
+.bg-custom {
+  background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v822-aew-02_1.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=b3085fc6d035a11ec687623af22304e5");
+  background-size: cover;
+  animation: my-animation 3s infinite;
+}
+
+@keyframes my-animation {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100px 100px;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
