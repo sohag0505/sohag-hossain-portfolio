@@ -1,5 +1,4 @@
 import { MantineProvider } from "@mantine/core";
-import React from "react";
 import Contact from "../../Contact/Contact";
 import Footer from "../../Footer/Footer";
 import MyProject from "../../MyProject/MyProject";
@@ -9,9 +8,9 @@ import TopSection from "../../TopSection/TopSection";
 
 const Home = () => {
   return (
-    <div>
+    <div id="home">
+      <Navbar></Navbar>
       <div className="max-w-7xl mx-auto">
-        <Navbar></Navbar>
         <TopSection></TopSection>
         <Skills></Skills>
         <MyProject></MyProject>

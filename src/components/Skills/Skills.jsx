@@ -1,19 +1,17 @@
-import React from "react";
-
 const Skills = () => {
   return (
     <div id="skills">
-      <div className="mt-40">
-        <h2 className="text-5xl text-center text-rose-500 font-mono font-semibold">
+      <div className="md:mt-40 mt-20">
+        <h2 className="md:text-5xl text-3xl text-center text-rose-500 font-mono font-semibold">
           Take a look at my Skills
         </h2>
-        <p className="text-center text-xl mt-4">
+        <p className="text-center text-xl  m-4">
           These are my skills and this contains all the technologies and
           programming languages <br /> that I have learnt until now. I am
           constantly learning, therefore I may update this section more often.
         </p>
       </div>
-      <div className="grid grid-cols-4 gap-10 mt-20">
+      <div className="grid md:grid-cols-4 grid-cols-2 md:gap-10 gap-2 md:mt-20 m-4 mt-10">
         <div className="border border-spacing-2 shadow-2xl rounded-lg bg-stone-200 hover:bg-stone-300 flex justify-center items-center p-8 ">
           <div className="space-y-2">
             <img

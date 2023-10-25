@@ -1,9 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect } from "react";
 
+import { Events, Link, scrollSpy } from "react-scroll";
 const Navbar = () => {
+  useEffect(() => {
+    Events.scrollEvent.register("begin", (to, element) => {
+      console.log("begin", to, element);
+    });
+
+    Events.scrollEvent.register("end", (to, element) => {
+      console.log("end", to, element);
+    });
+
+    scrollSpy.update();
+
+    return () => {
+      Events.scrollEvent.remove("begin");
+      Events.scrollEvent.remove("end");
+    };
+  }, []);
+
+  const handleSetActive = (to) => {
+    console.log(to);
+  };
   return (
-    <div className="navbar bg-base-100">
+    <div className="navbar fixed top-0  bg-base-300 rounded-lg font-semibold">
       <div className="navbar-start">
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -24,31 +44,126 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-sky-500 rounded-box w-52"
           >
             <li>
-              <a>Item 1</a>
+              <Link
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                onSetActive={handleSetActive}
+                to="home"
+              >
+                Home
+              </Link>
             </li>
-
             <li>
-              <a>Item 3</a>
+              <Link
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                onSetActive={handleSetActive}
+                to="skills"
+              >
+                Skills
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                onSetActive={handleSetActive}
+                to="my-projects"
+              >
+                My Projects
+              </Link>
+            </li>
+            <li>
+              <Link
+                activeClass="active"
+                spy={true}
+                smooth={true}
+                offset={50}
+                duration={500}
+                onSetActive={handleSetActive}
+                to="contact"
+              >
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
-        <a className="normal-case text-xl font-serif">Sohag hossain</a>
+        <a className="normal-case text-xl font-serif text-sky-500">
+          Sohag hossain
+        </a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
-            <Link to="/home">Home</Link>
+            <Link
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={handleSetActive}
+              to="home"
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="skills">Skills</Link>
+            <Link
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={handleSetActive}
+              to="skills"
+            >
+              Skills
+            </Link>
+          </li>
+          <li>
+            <Link
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={handleSetActive}
+              to="my-projects"
+            >
+              My Projects
+            </Link>
+          </li>
+          <li>
+            <Link
+              activeClass="active"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={handleSetActive}
+              to="contact"
+            >
+              Contact
+            </Link>
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">View Resume</a>
+        <a className="btn bg-sky-400 hover:bg-sky-600 text-white">
+          View Resume
+        </a>
       </div>
     </div>
   );

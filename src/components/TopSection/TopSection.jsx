@@ -4,19 +4,19 @@ import "./TopSection.css";
 
 const TopSection = () => {
   return (
-    <div className="grid grid-cols-2 gap-10 mt-20">
-      <div className="my-10">
+    <div className="grid md:grid-cols-2 grid-cols-1 md:gap-10 mt-20">
+      <div className="my-10 m-4">
         <div className="flex items-center mb-2">
           <FaBeer className="md:text-4xl text-3xl text-sky-700" />
           <h2 className="text-sm md:NormalCharacterStyle text-white bg-sky-500 rounded-md p-1">
             About Me
           </h2>
         </div>
-        <div className="text-5xl">
+        <div className="md:text-5xl text-3xl">
           <span className="font-serif text-sky-500 ">Hey,</span> <br /> I am{" "}
           <span className="text-sky-500 animate-pulse">Sohag hossain</span>
         </div>
-        <h4 className="text-3xl font-semibold text-rose-400 mt-5">
+        <h4 className="md:text-3xl text-xl  font-semibold text-rose-400 mt-5">
           Frontend || React Developer
         </h4>
         <p className="text-lg mt-4">
@@ -29,7 +29,7 @@ const TopSection = () => {
           Hire Me
         </button>
       </div>
-      <div className="avatar ml-48 ">
+      <div className="avatar md:ml-48 ml-4">
         <div className=" rounded-xl bg-custom ">
           <img src={img1} alt="" />
         </div>
